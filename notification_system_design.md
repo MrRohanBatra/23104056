@@ -26,4 +26,24 @@
     }
   ]
 }
+```
 
+
+
+## STAGE 2
+
+**use PostgreSQL**
+* **REASON** notifications have a fixed structure.SQL provides powerful indexing.we use nosql databases when we dont know the structure but here the structure is known so POSTGRESQL is preferred
+
+
+```
+CREATE TABLE notifications (
+    id UUID PRIMARY KEY,
+    student_id INT NOT NULL,
+    notification_type VARCHAR(20),
+    message TEXT,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+* **SCALING CHALENGE** query might slow down for lot of users 
