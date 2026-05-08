@@ -47,3 +47,11 @@ CREATE TABLE notifications (
 );
 ```
 * **SCALING CHALENGE** query might slow down for lot of users 
+
+
+## STAGE 3
+
+* **query** ```select * from notifications where student_id=1000 and is_read=false order by created_at DESC;``` can slow down the result 
+
+* **solution** we can create an index to reduce the computation cost from O(N)
+
