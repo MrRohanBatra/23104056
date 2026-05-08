@@ -55,3 +55,10 @@ CREATE TABLE notifications (
 
 * **solution** we can create an index to reduce the computation cost from O(N)
 
+## STAGE 4
+
+* **we can use redis to prevent db overload situation**
+* if a student logs in we fetch last 20 notifications from redis
+* if cache is empty , we fetch from db
+* we use a ttl to set that the data in cache will be allowed for only for like 30 minutes
+
