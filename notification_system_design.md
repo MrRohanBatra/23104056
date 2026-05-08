@@ -62,3 +62,9 @@ CREATE TABLE notifications (
 * if cache is empty , we fetch from db
 * we use a ttl to set that the data in cache will be allowed for only for like 30 minutes
 
+## STAGE 5
+
+* the current solution is synchronous and blocking if any email in between fails no one further will recieve the notification
+
+* **REDIGN** we can use a queue based approach here where the  queue will be populated with jobs to send and update notifications and handled all the status updations internally which will prevent if one request fails other will still be served
+
